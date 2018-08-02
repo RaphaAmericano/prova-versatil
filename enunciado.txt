@@ -1,0 +1,33 @@
+Uma empresa de telecomunicações com cerca de 10 milhões de clientes registra diariamente as
+chamadas telefônicas realizadas entre eles. Este registro consiste em um arquivo de texto por dia,
+contendo uma linha de cabeçalho e uma linha para cada ligação registrada, como no seguinte
+exemplo:
+DataHora;TelefoneOrigem;TelefoneDestino;Duracao
+2018-01-01 00:01:10;31999990000;31977776666;30
+2018-01-01 00:37:05;21988881111;21965655656;125
+2018-01-01 01:19:03;17901710171;11944440003;203
+2018-01-01 01:26:35;31999990000;2122221111;47
+...
+2018-01-01 23:59:50;5132323333;5144442121;118
+A primeira linha é o cabeçalho com os nomes dos campos. O campo DataHora contém a data (ano,
+mês e dia) e o horário (horas, minutos e segundos) em que a ligação foi iniciada; o campo
+TelefoneOrigem contém o número de telefone que fez a ligação; o campo TelefoneDestino contém o
+número de telefone que recebeu a ligação; o campo Duracao contém a duração da chamada, em
+segundos. Os números de telefone podem ter 10 ou 11 dígitos, sendo os dois primeiros referentes ao
+DDD.
+O arquivo de ligações contém no máximo 20 milhões de linhas.
+Sua tarefa é desenvolver um programa que processe um arquivo neste formato e gere um arquivo de
+saída informando:
+• O total de clientes que fizeram ligações;
+• A duração média das ligações por DDD (obtido do telefone que fez a ligação), em segundos,
+sem nenhuma casa decimal (arredondada para o número inteiro mais próximo);
+• O total de clientes que fizeram ligações para telefones de outro DDD.
+O formato do arquivo de saída é:
+TOTAL_CLIENTES_LIGARAM: 32854
+DURACAO_MEDIA:
+11: 97
+12: 103
+13: 89
+…
+99: 110
+TOTAL_CLIENTES_LIGARAM_OUTRO_DDD: 1549
