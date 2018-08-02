@@ -15,9 +15,26 @@
     <?php 
     
     // $total = 0;
-    // $arquivo = file("teste-ligacoes-2018-01-01.txt", FILE_SKIP_EMPTY_LINES);
+    // $arquivo = fopen("teste-ligacoes-2018-01-01.txt", "r");
     // $ligacoes = array();
     // $ddds = array();
+    // $c = 0;
+    // while(($value = fgets($arquivo)) !== false ){
+    //     if($c == 20000000){
+    //         break;
+    //     }
+    //     if($c != 0){
+    //         $total++;
+    //         $saida = explode(';', $value);
+    //         $saida[1] = substr($saida[1],0, 2);
+    //         $saida[2] = substr($saida[2],0, 2);
+    //         array_push($ddds,substr($saida[1],0, 2));
+    //         array_push($ligacoes, $saida);
+    //     }
+    //     $c++;
+    // }
+    // fclose($arquivo);
+
     // foreach ($arquivo as $key => $value) {
     //     if($key != 0){
     //         $total++;
@@ -65,13 +82,21 @@
     //     array_push($duracao_soma, $soma_por_ddd);
     // }
 
-    // print 'TOTAL_CLIENTES_LIGARAM: '.$total."<br>"; 
-    // print 'DURACAO_MEDIA:<br>';
+    // $arquivo_saida = fopen('saida.txt', 'w');
+
+    // fwrite($arquivo_saida, 'TOTAL_CLIENTES_LIGARAM: '.$total.PHP_EOL);
+    // fwrite($arquivo_saida, 'DURACAO_MEDIA:'.PHP_EOL);
+    // //print 'TOTAL_CLIENTES_LIGARAM: '.$total."<br>"; 
+    // //print 'DURACAO_MEDIA:<br>';
+    // //print 'DURACAO_MEDIA:<br>';
     // foreach ($duracao_soma as $chaveddd => $segundos) {
-    //     print $segundos[0].": ".$segundos[1]."<br>";
+    //     fwrite($arquivo_saida, $segundos[0].": ".$segundos[1].PHP_EOL);
+    //     //print $segundos[0].": ".$segundos[1]."<br>";
     // }
-    // print 'TOTAL_CLIENTES_LIGARAM_OUTRO_DDD: '.$outro_ddd;
-    // print '<br>';
+    // fwrite($arquivo_saida, 'TOTAL_CLIENTES_LIGARAM_OUTRO_DDD: '.$outro_ddd.PHP_EOL);
+    // //print 'TOTAL_CLIENTES_LIGARAM_OUTRO_DDD: '.$outro_ddd;
+    // //print '<br>';
+    // fclose($arquivo_saida);
     // ?>
     
 </body>
