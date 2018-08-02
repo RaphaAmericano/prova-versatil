@@ -1,14 +1,14 @@
 <?php 
+include('header.php'); ?>
 
-// header("Content-type: text/plain");
-// header("Content-Disposition: attachment; filename=saida.txt");
-// header('Cache-Control: no-store, no-cache, must-revalidate');
-// header('Cache-Control: post-check=0, pre-check=0');
-// header('Pragma: no-cache');
-// header('Expires:0');
-// header("Content-Type: application/force-download");
-// header("Connection: close");
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 p-2">
+            <div class="jumbotron p-5">
+                <h1 class="display-4">Prova Versátil </h1>
 
+<?php
+   
     if(!empty($_POST['arquivo'])){
         
         $total = 0;
@@ -75,8 +75,29 @@
 
         fwrite($arquivo_saida, 'TOTAL_CLIENTES_LIGARAM_OUTRO_DDD: '.$outro_ddd.PHP_EOL);
         
-        fclose($arquivo_saida);
-    } else {
-        print "Erro: Arquivo vazio";
-    }
+        fclose($arquivo_saida); ?>
+
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Sucesso!</h4>
+            <p>Arquivo Pronto</p>
+            <hr>
+            <p class="mb-0">Seu relatório foi gerado com sucesso! Eles está disponível no arquivo <strong>saida.txt</strong>, na raíz do programa.</p>
+            <p class="mb-0">Você pode <a href="index.php" class="alert-link">voltar</a> para a página inicial e carregue um novo arquivo.</p>
+        </div>
+
+    <?php
+    } else { ?>
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Erro:</h4>
+            <p>Arquivo vazio</p>
+            <hr>
+            <p class="mb-0"><a href="index.php" class="alert-link">Volte</a> para a página inicial e carregue um arquivo válido</p>
+        </div>
+    <?php }
 ?>
+            </div>
+        </div>        
+    </div>
+</div>
+</body>
+</html>
